@@ -33,6 +33,7 @@ func main() {
 
 func convert(in *v1experimental.ProfilesData, out *v1development.ProfilesData) {
 	dict := new(v1development.ProfilesDictionary)
+	out.Dictionary = dict
 	for _, xrp := range in.ResourceProfiles {
 		out.ResourceProfiles = append(out.ResourceProfiles, convertResourceProfiles(xrp, dict))
 	}
